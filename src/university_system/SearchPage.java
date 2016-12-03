@@ -1,15 +1,17 @@
+package university_system;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class CheckPage extends SystemGUI{
+public class SearchPage extends SystemGUI{
 
-	JFrame frame;
+	JFrame frame; 
 	JPanel northPanel, centralPanel; // GridBagConstraints
 	JButton regButton, checkButton, manageButton, searchButton, teachButton;
 	GridBagConstraints gc;
 
-	public CheckPage(JFrame frame){
+	public SearchPage(JFrame frame){
 		this.frame = frame;
 		frame.setTitle("University Registration System");
 		frame.setSize(1000,500);
@@ -26,7 +28,7 @@ public class CheckPage extends SystemGUI{
 		/* GUI Sections */
 
 		/* North Panel*/
-		northPanel = createHeaderPanel("Check Status");
+		northPanel = createHeaderPanel("Search");
 		/* Central Panel */
 		centralPanel = new JPanel(new GridBagLayout());
 		
@@ -38,31 +40,31 @@ public class CheckPage extends SystemGUI{
 		*/
 
 		/* Registration Button Constraints */
-		gc = addComponent(0,0,1,1, GridBagConstraints.BOTH,
+		gc = bagConstraints(0,0,1,1, GridBagConstraints.BOTH,
 		GridBagConstraints.CENTER,1,1, 10,10,10,10);
 		centralPanel.add(regButton, gc);
 		regButton.addActionListener(new ButtonListener()); //button enabled
 
 		/* Check Status Button Constraints */
-		gc = addComponent(1,0,1,1, GridBagConstraints.BOTH,
+		gc = bagConstraints(1,0,1,1, GridBagConstraints.BOTH,
 		GridBagConstraints.CENTER,1,1,10,10,10,10);
 		centralPanel.add(checkButton, gc);
 		checkButton.addActionListener(new ButtonListener()); //button enabled
 		
 		/* Management Button Constraints */
-		gc = addComponent(0,1,1,1, GridBagConstraints.BOTH,
+		gc = bagConstraints(0,1,1,1, GridBagConstraints.BOTH,
 		GridBagConstraints.CENTER,1,1,10,10,10,10);
 		centralPanel.add(manageButton, gc);
 		manageButton.addActionListener(new ButtonListener()); //button enabled
 		
 		/* Search Button Constraints */
-		gc = addComponent(1,1,1,1, GridBagConstraints.BOTH,
+		gc = bagConstraints(1,1,1,1, GridBagConstraints.BOTH,
 		GridBagConstraints.CENTER,1,1,10,10,10,10);
 		centralPanel.add(searchButton, gc);
 		searchButton.addActionListener(new ButtonListener()); //button enabled
 		
 		/* Classes I Teach Button Constraints */
-		gc = addComponent(0,2,2,1, GridBagConstraints.BOTH,
+		gc = bagConstraints(0,2,2,1, GridBagConstraints.BOTH,
 		GridBagConstraints.CENTER,1,1,10,10,10,10);
 		centralPanel.add(teachButton, gc);
 		teachButton.addActionListener(new ButtonListener()); //button enabled
@@ -86,7 +88,6 @@ public class CheckPage extends SystemGUI{
 		----------------------------------------------- 
 		-----------------------------------------------
 	*/	
-
 	private class ButtonListener implements ActionListener{
 
 		public void actionPerformed(ActionEvent e){
@@ -117,15 +118,15 @@ public class CheckPage extends SystemGUI{
 			}
 		}
 	}
-
 	/*
 		-----------------------------------------------
 		-----------------------------------------------
 		----------------------------------------------- 
 		-----------------------------------------------
 	*/
+
 	public static void main(String[] args){
 		JFrame frame = new JFrame();
-		CheckPage mypage = new CheckPage(frame);
+		SearchPage mypage = new SearchPage(frame);
 	}
 }

@@ -1,3 +1,5 @@
+package university_system;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -6,6 +8,9 @@ public class ManPage extends SystemGUI{
 
 	JFrame frame;
 	JPanel northPanel, centralPanel; // GridBagConstraints
+
+	JButton regButton, checkButton, manageButton, searchButton, teachButton;
+	
 	
 	//JButton regButton, checkButton, manageButton, searchButton, teachButton;
 	GridBagConstraints gc;
@@ -39,31 +44,31 @@ public class ManPage extends SystemGUI{
 		*/
 
 		/* Registration Button Constraints */
-		gc = addComponent(0,0,1,1, GridBagConstraints.BOTH,
+		gc = bagConstraints(0,0,1,1, GridBagConstraints.BOTH,
 		GridBagConstraints.CENTER,1,1, 10,10,10,10);
 		centralPanel.add(regButton, gc);
 		regButton.addActionListener(new ButtonListener()); //button enabled
 
 		/* Check Status Button Constraints */
-		gc = addComponent(1,0,1,1, GridBagConstraints.BOTH,
+		gc = bagConstraints(1,0,1,1, GridBagConstraints.BOTH,
 		GridBagConstraints.CENTER,1,1,10,10,10,10);
 		centralPanel.add(checkButton, gc);
 		checkButton.addActionListener(new ButtonListener()); //button enabled
 		
 		/* Management Button Constraints */
-		gc = addComponent(0,1,1,1, GridBagConstraints.BOTH,
+		gc = bagConstraints(0,1,1,1, GridBagConstraints.BOTH,
 		GridBagConstraints.CENTER,1,1,10,10,10,10);
 		centralPanel.add(manageButton, gc);
 		manageButton.addActionListener(new ButtonListener()); //button enabled
 		
 		/* Search Button Constraints */
-		gc = addComponent(1,1,1,1, GridBagConstraints.BOTH,
+		gc = bagConstraints(1,1,1,1, GridBagConstraints.BOTH,
 		GridBagConstraints.CENTER,1,1,10,10,10,10);
 		centralPanel.add(searchButton, gc);
 		searchButton.addActionListener(new ButtonListener()); //button enabled
 		
 		/* Classes I Teach Button Constraints */
-		gc = addComponent(0,2,2,1, GridBagConstraints.BOTH,
+		gc = bagConstraints(0,2,2,1, GridBagConstraints.BOTH,
 		GridBagConstraints.CENTER,1,1,10,10,10,10);
 		centralPanel.add(teachButton, gc);
 		teachButton.addActionListener(new ButtonListener()); //button enabled

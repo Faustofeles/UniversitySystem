@@ -1,15 +1,17 @@
+package university_system;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class ProfPage extends SystemGUI{
+public class CheckPage extends SystemGUI{
 
 	JFrame frame;
 	JPanel northPanel, centralPanel; // GridBagConstraints
 	JButton regButton, checkButton, manageButton, searchButton, teachButton;
 	GridBagConstraints gc;
 
-	public ProfPage(JFrame frame){
+	public CheckPage(JFrame frame){
 		this.frame = frame;
 		frame.setTitle("University Registration System");
 		frame.setSize(1000,500);
@@ -26,7 +28,7 @@ public class ProfPage extends SystemGUI{
 		/* GUI Sections */
 
 		/* North Panel*/
-		northPanel = createHeaderPanel("Classes I Teach");
+		northPanel = createHeaderPanel("Check Status");
 		/* Central Panel */
 		centralPanel = new JPanel(new GridBagLayout());
 		
@@ -38,31 +40,31 @@ public class ProfPage extends SystemGUI{
 		*/
 
 		/* Registration Button Constraints */
-		gc = addComponent(0,0,1,1, GridBagConstraints.BOTH,
+		gc = bagConstraints(0,0,1,1, GridBagConstraints.BOTH,
 		GridBagConstraints.CENTER,1,1, 10,10,10,10);
 		centralPanel.add(regButton, gc);
 		regButton.addActionListener(new ButtonListener()); //button enabled
 
 		/* Check Status Button Constraints */
-		gc = addComponent(1,0,1,1, GridBagConstraints.BOTH,
+		gc = bagConstraints(1,0,1,1, GridBagConstraints.BOTH,
 		GridBagConstraints.CENTER,1,1,10,10,10,10);
 		centralPanel.add(checkButton, gc);
 		checkButton.addActionListener(new ButtonListener()); //button enabled
 		
 		/* Management Button Constraints */
-		gc = addComponent(0,1,1,1, GridBagConstraints.BOTH,
+		gc = bagConstraints(0,1,1,1, GridBagConstraints.BOTH,
 		GridBagConstraints.CENTER,1,1,10,10,10,10);
 		centralPanel.add(manageButton, gc);
 		manageButton.addActionListener(new ButtonListener()); //button enabled
 		
 		/* Search Button Constraints */
-		gc = addComponent(1,1,1,1, GridBagConstraints.BOTH,
+		gc = bagConstraints(1,1,1,1, GridBagConstraints.BOTH,
 		GridBagConstraints.CENTER,1,1,10,10,10,10);
 		centralPanel.add(searchButton, gc);
 		searchButton.addActionListener(new ButtonListener()); //button enabled
 		
 		/* Classes I Teach Button Constraints */
-		gc = addComponent(0,2,2,1, GridBagConstraints.BOTH,
+		gc = bagConstraints(0,2,2,1, GridBagConstraints.BOTH,
 		GridBagConstraints.CENTER,1,1,10,10,10,10);
 		centralPanel.add(teachButton, gc);
 		teachButton.addActionListener(new ButtonListener()); //button enabled
@@ -93,27 +95,27 @@ public class ProfPage extends SystemGUI{
 			if(e.getSource() == regButton){
 				System.out.println("Registration Button Pressed");
 				frame.getContentPane().removeAll();
-        		new RegPage(frame);
+	    		new RegPage(frame);
 			}
 			else if(e.getSource() == checkButton){
 				System.out.println("Check Status Button Pressed");
 				frame.getContentPane().removeAll();
-        		new CheckPage(frame);
+	    		new CheckPage(frame);
 			}
 			else if(e.getSource() == searchButton){
 				System.out.println("Search Button Pressed");
 				frame.getContentPane().removeAll();
-        		new SearchPage(frame);
+	    		new SearchPage(frame);
 			}
 			else if(e.getSource() == teachButton){
 				System.out.println("Classes I Teach Button Pressed");
 				frame.getContentPane().removeAll();
-        		new ProfPage(frame);
+	    		new ProfPage(frame);
 			}
 			else if(e.getSource() == manageButton){
 				System.out.println("Management Button Pressed");
 				frame.getContentPane().removeAll();
-        		new ManPage(frame);
+	    		new ManPage(frame);
 			}
 		}
 	}
@@ -124,10 +126,8 @@ public class ProfPage extends SystemGUI{
 		----------------------------------------------- 
 		-----------------------------------------------
 	*/
-
-
 	public static void main(String[] args){
 		JFrame frame = new JFrame();
-		ProfPage mypage = new ProfPage(frame);
+		CheckPage mypage = new CheckPage(frame);
 	}
 }
