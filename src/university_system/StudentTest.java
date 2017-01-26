@@ -34,7 +34,7 @@ public class StudentTest {
 	@Test
 	public void testCompletedCourse(){
 		Student bill = new Student(42,"Billy","billy42","aoo");
-		Course AOO = new Course("Advanced Obj. Or.","2", 42);
+		Course AOO = new Course("Advanced Obj. Or.","2", null, null, null, null, 42);
 		bill.coursesCompleted.put(AOO, false);
 		bill.completeCourse(AOO);
 		assertEquals("Course has been completed\n", outContent.toString());
