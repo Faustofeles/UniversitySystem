@@ -1,6 +1,7 @@
 package university_system;
+
 import java.io.*;
-import java.sql.Date;
+
 import java.util.*;
 /** The course class which represents types of courses and their relative fields
  * @author Darren Solorzano
@@ -9,22 +10,32 @@ import java.util.*;
  * @version 1.3
  * */
 public class Course {
-
+	String cNumber;
 	String courseName;
+	String credits;
+	String days;
 	String date;
 	String time;
-	int cRN;
+	int CRN;
 
 	/** Course constructor
+	 * @param cNumber holds Course number e.g. 3340
 	 * @param courseName holds the name of the course
-	 * @param startDate holds the date which class is held
+	 * @param credits holds the number of credits
+	 * @param days holds the days the course is offered
+	 * @param date holds the date which class is held
+	 * @param time holds the time it starts
 	 * @param cRN holds the course reference number(CRN)
 	 * */
-	public Course(String courseName, String startDate, int cRN) {//We need to fix these course parameters
+	public Course(String cNumber, String courseName, String credits, String days, String date, String time, int CRN) {
 		super();
+		this.cNumber = cNumber;
 		this.courseName = courseName;
-		this.date = startDate;
-		this.cRN = cRN;
+		this.credits = credits;
+		this.days = days;
+		this.date = date;
+		this.time = time;
+		this.CRN = CRN;
 	}
 
 	public String getCourseName() {
@@ -46,41 +57,23 @@ public class Course {
 		this.time = time;
 	}
 	public int getcRN() {
-		return cRN;
+		return CRN;
 	}
 	public void setcRN(int cRN) {
-		this.cRN = cRN;
+		this.CRN = cRN;
 	}
 
-
-
-
-	public void main(String [] args) throws IOException{
-		Scanner scan = new Scanner(System.in);
-
-		/*Courses c1 = new Courses("OOP", "30th", 100);
-		for(int i =0;i< 3;i++){
-			System.out.println("Enter course");
-			String name =scan.next();
-			System.out.println("Enter crn");
-			int t = scan.nextInt();
-			createCourse(name, t);
-		}
-		
-		System.out.println("end of creating courses");
-		int t =scan.nextInt();
-		
-		
-		System.out.println("Enter course to drop");
-		String s = scan.next();
-		System.out.println("Enter crn to drop");
-		int n = scan.nextInt();
-		removeCourse(s,n);*/
-		
-
+	public String getcNumber() {
+		return cNumber;
 	}
 
-
-
-
+	public String getCredits() {
+		return credits;
+	}
+	
+	public String toString(){
+		return ""+this.getCourseName()+" CRN: "+this.getcRN();
+	}
+	
 }
+ 
